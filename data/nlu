@@ -1,0 +1,37 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+
+- intent: question
+  examples: |
+    - tell me about 
+    - tell me if
+    - are
+    - can you tell
+    - do you think
+    - what are
+    - what is
+    - what do you mean by
+
+- intent: goodbye
+  examples: |
+    - bye
+    - good bye
+    - see you later
+    - see you around
+    - bye bye
+
+- intent: thanks
+  examples: |
+    - thank you
+    - thanks a lot
+    - thanks for helping
+    - very helpful
+
+
