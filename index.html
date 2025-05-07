@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RASA chatbot</title>
+    <style>
+
+        /* Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #ffffff;
+            margin: 15px auto;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            text-align: left;
+        }
+
+        li:hover {
+            transform: scale(1.02);
+            transition: 0.3s;
+        }
+
+        b {
+            font-size: 18px;
+            color: #2c3e50;
+        }
+
+        .info {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 30px 0;
+            color: #e74c3c;
+        }
+
+        /* Chat Button */
+        .chat-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .chat-btn:hover {
+            background-color: #c0392b;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<h1>Lea - The Legal Advisor Chatbot</h1>
+
+    <h2>Currently Available Schemes:</h2>
+    <ul>
+        <li> <b>Schemes for Women</b><br>
+            Women Helpline Number (181), Beti Bachao Beti Padhao (BBBP), PMMVY, One Stop Centre (Sakhi Centre),
+            State Resource Centre for Women (SRCW), Kishori Shakti Yojna, Compensation Scheme for Women Victims,
+            Protection Against Domestic Violence, and more.
+        </li>
+
+        <li> <b>Schemes for Senior Citizens</b><br>
+            Integrated Programme for Senior Citizens (IPSrC), PMVVY, Senior Citizens' Saving Scheme (SCSS),
+            Indira Gandhi National Old Age Pension Scheme (IGNOAPS), Ayushman Bharat PM-JAY, NSAP, RVY, and VPBY.
+        </li>
+
+        <li> <b>Schemes for SC/STs</b><br>
+            Post Matric Scholarship for SC Students, National Fellowship for SC Students, Stand Up India Scheme,
+            National Overseas Scholarship for ST Students, Venture Capital Fund for SCs, and SCA to TSS.
+        </li>
+
+        <li> <b>Schemes for PwDs</b><br>
+            ADIP Scheme, DDRS, National Fund for PwDs, Chief Minister's Comprehensive Health Insurance Scheme,
+            Scholarship Schemes for Students with Disabilities, and more.
+        </li>
+    </ul>
+
+    <p class="info">Click the button in the corner to start chatting with Lea!</p>
+
+  <script>!(function () {
+    let e = document.createElement("script"), t = document.head || document.getElementsByTagName("head")[0];
+    (e.src = "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+      (e.async = !0),
+      (e.onload = () => {
+        window.WebChat.default(
+          {
+            initPayload: JSON.stringify({ message: "/greet" }),
+            customData: { language: "en" },
+            socketUrl: "http://localhost:5005",
+            title: 'Lea',
+            subtitle: 'Say hi and get started',
+            params: { storage: "session" }
+
+          },
+          null
+        );
+      }),
+      t.insertBefore(e, t.firstChild);
+    })();
+  </script>
+
+</body>
+</html>
