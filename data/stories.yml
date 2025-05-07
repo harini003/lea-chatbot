@@ -1,0 +1,16 @@
+version: "3.1"
+
+stories:
+
+- story: ideal path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: question
+  - action: action_fetch_info
+  - intent: thanks
+  - action: utter_thanks
+
+
+
+
